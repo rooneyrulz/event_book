@@ -1,0 +1,39 @@
+<div class="Items">
+  <div class="Items-container">
+    <div class="py-4 px-3">
+      <h1 class="text-center">Events</h1>
+      <h6 class="text-center text-muted">All Events</h6>
+      <br>
+      <ng-container *ngIf="UserEvent.length; else noEvents">
+        <div class="row">
+          <div class="col col-sm-12">
+              <div *ngFor="let event of UserEvent"  class="card my-3">
+                <div class="card-content">
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <strong>Event</strong>
+                      <span class="float-right">{{ event.name }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <strong>Price</strong>
+                      <span class="float-right">{{ event.price }}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer">
+                  <button (click)="removeUserEvent(event._id)" class="btn btn-danger">REMOVE</button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #noEvents>
+        <div class="row">
+          <div class="col col-sm-12">
+            <h5 class="text-center text-danger">It seems You have not created any event yet,Let's create some events...</h5>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

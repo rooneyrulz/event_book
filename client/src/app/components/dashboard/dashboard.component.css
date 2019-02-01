@@ -1,0 +1,9 @@
+h1 {
+  text-shadow: 2px 1px 5px #111;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.jumbotron {
+  padding: 8rem 5rem;
+}

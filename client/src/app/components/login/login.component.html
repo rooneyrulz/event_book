@@ -1,0 +1,32 @@
+<div class="Login">
+  <div class="Login-container">
+    <div class="py-4 px-3">
+      <h1 class="text-center p-0 m-0 mb-3">Log In</h1>
+      <h6 class="text-center text-muted">Let's Get Into Event Book</h6>
+      <br>
+      <div class="">
+        <form (submit)="onAuthenticateUser(userData)" #userData="ngForm">
+          <div class="row">
+            <div class="col col-sm-12">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username" class="form-control" placeholder="Enter Username..."
+                ngModel required >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-12">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" class="form-control" placeholder="Enter Password..."
+                ngModel required >
+              </div>
+            </div>
+          </div>
+          <button [class.disabled]="userData.form.invalid" id="btn-login" type="submit" class="btn btn-success btn-block">LOGIN</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

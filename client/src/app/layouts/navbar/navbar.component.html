@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark px-lg-5">
+    <a *ngIf="!authService.isLoggedIn()" class="navbar-brand" routerLink="/"><span class="text-danger">EVENT</span> BOOK</a>
+    <a *ngIf="authService.isLoggedIn()" class="navbar-brand" routerLink="/dashboard"><span class="text-danger">EVENT</span> BOOK</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li *ngIf="!authService.isLoggedIn()" class="nav-item" [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{exact:true}">
+                <a class="nav-link" routerLink="/">HOME</a>
+            </li>
+            <li *ngIf="authService.isLoggedIn()" class="nav-item" [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{exact:true}">
+                <a class="nav-link" routerLink="/dashboard">DASHBOARD</a>
+            </li>
+            <li *ngIf="authService.isLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+              <a class="nav-link" routerLink="/item/create">CREATE EVENT</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a class="nav-link" routerLink="/about">ABOUT</a>
+            </li>
+        </ul>
+        <ul *ngIf="!authService.isLoggedIn()" class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+              <a class="nav-link" routerLink="/sign-up">SIGN UP</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+              <a class="nav-link" routerLink="/login">LOGIN</a>
+          </li>
+        </ul>
+        <ul *ngIf="authService.isLoggedIn()" class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li *ngIf="authService.isLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a routerLink="/items" class="nav-link">MY EVENTS</a>
+            </li>
+            <li class="nav-item">
+              <a (click)="onHandleLogOut()" class="btn nav-link">LOGOUT</a>
+          </li>
+        </ul>
+    </div>
+</nav>

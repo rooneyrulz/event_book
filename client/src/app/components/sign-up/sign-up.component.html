@@ -1,0 +1,60 @@
+<div class="Signup">
+  <div class="Signup-container">
+    <div class="py-4 px-3">
+      <h1 class="text-center m-0 p-0 mb-2">Sign Up</h1>
+      <h6 class="text-center text-muted">Let's Create Your New Event Book Account</h6>
+      <br>
+      <div class="">
+        <form (submit)="onHandleRegister(userData)" #userData="ngForm">
+          <div class="row">
+            <div class="col col-sm-12">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input [class.is-invalid]="name.invalid && name.touched" id="name" type="text" name="name" class="form-control" placeholder="Enter Name..."
+                #name="ngModel" ngModel required>
+                <div>
+                  <small class="text-danger" *ngIf="name.invalid && name.touched">Invalid name!</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-12 col-md-6">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" class="form-control" placeholder="Enter Email..."
+                ngModel required >
+              </div>
+            </div>
+            <div class="col col-sm-12 col-md-6">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" type="text" name="username" class="form-control" placeholder="Enter Username..."
+                ngModel required >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-12">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" class="form-control" placeholder="Enter Password..."
+                ngModel required >
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-12">
+              <div class="form-group">
+                <label for="password2">Confirm Password</label>
+                <input id="password2" type="password" name="password2" class="form-control" placeholder="Confirm Password..."
+                ngModel required >
+              </div>
+            </div>
+          </div>
+          <button [class.disabled]="userData.form.invalid" id="btn-signup" type="submit" class="btn text-light btn-block">SIGN UP</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

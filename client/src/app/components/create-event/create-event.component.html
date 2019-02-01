@@ -1,0 +1,39 @@
+<div class="Create-Event">
+  <div class="Create-Event-container">
+    <div class="py-4 px-3">
+      <h1 class="text-center">Create Events</h1>
+      <h6 class="text-muted text-center">Let's Create Your Own Event</h6>
+      <br>
+      <div class="">
+        <form (submit)="onHandleSubmit(userData)" #userData="ngForm">
+          <div class="row">
+            <div class="col col-sm-12">
+              <div class="form-group">
+                <label for="name"><strong>Event</strong></label>
+                <input [class.is-invalid]="name.invalid && name.touched" id="name" type="text" name="name" class="form-control" placeholder="Enter Event Name..."
+                #name="ngModel" ngModel required>
+                <div>
+                  <small class="text-danger" *ngIf="name.invalid && name.touched">Invalid name!</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-sm-12">
+              <div class="form-group">
+                <label for="price"><strong>Price</strong></label>
+                <input [class.is-invalid]="price.invalid && price.touched" id="price" type="text" name="price" class="form-control" placeholder="Enter Price..."
+                #price="ngModel" ngModel required>
+                <div>
+                  <small class="text-danger" *ngIf="price.invalid && price.touched">Invalid price!</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button [class.disabled]="userData.form.invalid" type="submit" class="btn btn-primary">ADD EVENT</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
