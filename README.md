@@ -1,0 +1,2 @@
+# event_book
+#Event_Book It's a full-stack web app where you can play around with basic CRUD functionality.It's a fully authenticated app built with Angular 7, Typescript, Bootstrap also on back-end I'm using Node js, Express js &amp; Mongodb as a database. and MVC Architectural based app along with fully Javascript ES6 features.I made use of a bunch of different features Of Course. Specially for Authentication I'm using jsonwebtoken and @Auth0/angular-jwt module from my front-end. and also routings, validations, auth guard and so on.Fully integrated REST API included. 
