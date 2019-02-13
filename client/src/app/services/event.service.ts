@@ -8,7 +8,6 @@ import { Event } from "../../models/event.model";
   providedIn: 'root'
 })
 export class EventService {
-  uri: string = 'http://localhost:3000';;
   user: object = null;
   token: string = null;
   constructor(
@@ -28,7 +27,7 @@ export class EventService {
       'Content-Type':'application/json',
       'Authorization': this.token
     });
-    return this.http.post<Event>(`${this.uri}/event/create`, event, { headers: headers });
+    return this.http.post<Event>(`event/create`, event, { headers: headers });
   }
 
   fetchUserEvents(id:string): Observable<Event> {
@@ -37,7 +36,7 @@ export class EventService {
       'Content-Type':'application/json',
       'Authorization': this.token
     });
-    return this.http.get<Event>(`${this.uri}/event/${id}`, { headers: headers });
+    return this.http.get<Event>(`event/${id}`, { headers: headers });
   }
 
   deleteUserEvent(id:string):Observable<Event> {
@@ -46,7 +45,7 @@ export class EventService {
       'Content-Type':'application/json',
       'Authorization': this.token
     });
-    return this.http.delete<Event>(`${this.uri}/event/${id}`, { headers: headers });
+    return this.http.delete<Event>(`event/${id}`, { headers: headers });
   }
 
 }

@@ -6,8 +6,8 @@
   "scripts": {
     "client-install": "npm install --prefix client",
     "client": "npm start --prefix client",
-    "start": "node ./bin/server.js",
-    "server": "babel-watch ./bin/server.js",
+    "start": "node ./server.js",
+    "server": "babel-watch ./server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [

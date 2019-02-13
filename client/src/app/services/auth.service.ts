@@ -11,7 +11,6 @@ import { CurrentUser } from "../../models/currentUser.model";
   providedIn: 'root'
 })
 export class AuthService {
-  uri: string = 'http://localhost:3000';
   user: object = null;
   token: string = null;
   constructor(
@@ -27,7 +26,7 @@ export class AuthService {
       'Content-Type':'application/json',
       'Authorization': this.token
     });
-    return this.http.get<CurrentUser>(`${this.uri}/user/current`, { headers: headers });
+    return this.http.get<CurrentUser>(`user/current`, { headers: headers });
   }
 
   //Register User
@@ -35,7 +34,7 @@ export class AuthService {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    return this.http.post<User>(`${this.uri}/user/create`, user, { headers: headers });
+    return this.http.post<User>(`user/create`, user, { headers: headers });
   }
 
   //Authenticate User
@@ -43,7 +42,7 @@ export class AuthService {
     let headers = new HttpHeaders({
       'Content-Type':'application/json'
     });
-    return this.http.post<Auth>(`${this.uri}/user/authenticate`, user,  { headers: headers });
+    return this.http.post<Auth>(`user/authenticate`, user,  { headers: headers });
   }
 
   //Store Token & User on Local Storage
